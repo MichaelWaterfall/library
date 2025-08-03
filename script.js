@@ -7,6 +7,13 @@ function Book(title, author, pages) {
     this.bookTitle = title;
     this.bookAuthor = author;
     this.bookPages = pages;
+    this.id = crypto.randomUUID();
+}
+
+function displayBooks() {
+    for(let i = 0; i < myLibrary.length; i++) {
+        
+    }
 }
 
 
