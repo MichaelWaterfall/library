@@ -2,4 +2,12 @@
     margin: auto;
     width: 50%;
     border: 2px solid black;
+    text-align: center;
+}
+
+#library-div {
+    margin: auto;
+    width: 50%;
+    border: 2px solid black;
+    text-align: center;
 }
