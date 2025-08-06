@@ -5,9 +5,14 @@
     text-align: center;
 }
 
-#library-div {
+.library-div {
+    top: 50;
     margin: auto;
     width: 50%;
     border: 2px solid black;
+    text-align: center;
+}
+
+h1 {
     text-align: center;
 }

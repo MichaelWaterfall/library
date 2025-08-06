@@ -11,7 +11,10 @@ function Book(title, author, pages) {
 }
 
 function displayBooks() {
-    for(let i = 0; i < myLibrary.length; i++) {
+    const booksContainer = document.getElementById("books-container");
+    booksContainer.innerHTML = "";
+
+    for (let i = 0; i < myLibrary.length; i++) {
         const newDiv = document.createElement("div");
         const titleDiv = document.createElement("div");
         const authorDiv = document.createElement("div");
@@ -19,22 +22,30 @@ function displayBooks() {
         const idDiv = document.createElement("div");
         const readButton = document.createElement("button");
         const removeButton = document.createElement("button");
-        newDiv.id = "library-div";
-        titleDiv.innerHTML = myLibrary[i].bookTitle;
-        authorDiv.innerHTML = "author";
-        pagesDiv.innerHTML = "pages";
-        idDiv.innerHTML = "id"
         
-        document.getElementById("main").appendChild(newDiv);
-        document.getElementById("library-div").appendChild(titleDiv);
-        document.getElementById("library-div").appendChild(authorDiv);
-        document.getElementById("library-div").appendChild(pagesDiv);
-        document.getElementById("library-div").appendChild(idDiv);
-        document.getElementById("library-div").appendChild(readButton);
-        document.getElementById("library-div").appendChild(removeButton);
-        console.log("div");
+        removeButton.onclick = function () {
+            console.log(myLibrary[i]);
+        };
+
+        newDiv.classList.add("library-div");
+        readButton.innerHTML = "Read";
+        removeButton.innerHTML = "Remove";
+        titleDiv.innerHTML = "Title: " + myLibrary[i].bookTitle;
+        authorDiv.innerHTML = "Author: " + myLibrary[i].bookAuthor;
+        pagesDiv.innerHTML = "Pages: " + myLibrary[i].bookPages;
+        idDiv.innerHTML = "Id: " + myLibrary[i].id;
+
+        newDiv.appendChild(titleDiv);
+        newDiv.appendChild(authorDiv);
+        newDiv.appendChild(pagesDiv);
+        newDiv.appendChild(idDiv);
+        newDiv.appendChild(readButton);
+        newDiv.appendChild(removeButton);
+
+        booksContainer.appendChild(newDiv);
     }
 }
+
 
 
 document.getElementById("addBookButton").onclick = function (){
@@ -43,6 +54,7 @@ document.getElementById("addBookButton").onclick = function (){
     const titleInput = document.getElementById("titleInput").value;
     const pagesInput = document.getElementById("pagesInput").value;
     myLibrary.push(new Book(authorInput, titleInput, pagesInput));
+    displayBooks();
     console.log(myLibrary);
     console.log("update");
 }
