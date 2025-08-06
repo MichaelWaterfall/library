@@ -1,6 +1,4 @@
 const myLibrary = [];
-//const mainDiv = document.getElementById("main");
-//const addBook = document.getElementById("addBookButton");
 
 
 function Book(title, author, pages) {
@@ -70,7 +68,6 @@ function displayBooks() {
 
 
 document.getElementById("addBookButton").onclick = function (){
-    //console.log(title + author + pages);
     const authorInput = document.getElementById("authorInput").value;
     const titleInput = document.getElementById("titleInput").value;
     const pagesInput = document.getElementById("pagesInput").value;
